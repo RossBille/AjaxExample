@@ -1,0 +1,13 @@
+*.xml
+build/
+lib/CopyLibs/org-netbeans-modules-java-j2seproject-copylibstask.jar
+src/conf/MANIFEST.MF
+lib/javaee-endorsed-api-6.0/javaee-doc-api.jar
+lib/javaee-endorsed-api-6.0/javax.annotation.jar
+lib/javaee-endorsed-api-6.0/jaxb-api-osgi.jar
+lib/javaee-endorsed-api-6.0/webservices-api-osgi.jar
+lib/nblibraries.properties
+nbproject/genfiles.properties
+nbproject/private/private.properties
+nbproject/project.properties
+src/java/au/edu/newcastle/seng2050/ajax/test.java
