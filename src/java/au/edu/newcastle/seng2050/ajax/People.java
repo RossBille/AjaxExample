@@ -1,6 +1,6 @@
 package au.edu.newcastle.seng2050.ajax;
 
-import au.edu.newcastle.seng2050.ajax.example.objects.Animal;
+import au.edu.newcastle.seng2050.ajax.example.objects.Person;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Ross
  */
-public class Animals extends HttpServlet
+public class People extends HttpServlet
 {
 		private static Repo repo = new Repo();
 		@Override
@@ -36,20 +36,20 @@ public class Animals extends HttpServlet
 				if (id == null)
 				{
 						result += "[";
-						for (int i = 0;i < Repo.animals.size() - 1; i++)
+						for (int i = 0;i < Repo.people.size() - 1; i++)
 						{
-								result += print(contentType, repo.animals.get(i));
+								result += print(contentType, repo.people.get(i));
 								result += ",";
 						}
-						result += print(contentType, repo.animals.get(repo.animals.size()-1));
+						result += print(contentType, repo.people.get(repo.people.size()-1));
 						result += "]";
 				}else{
-						result += print(contentType, repo.animals.get(Integer.parseInt(id)));
+						result += print(contentType, repo.people.get(Integer.parseInt(id)));
 				}
 				PrintWriter out = response.getWriter();
 				out.print(result);
 		}
-		private String print(String contentType, Animal a)
+		private String print(String contentType, Person a)
 		{
 				if(contentType.equalsIgnoreCase("text/json"))
 				{

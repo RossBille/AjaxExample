@@ -11,3 +11,5 @@ nbproject/genfiles.properties
 nbproject/private/private.properties
 nbproject/project.properties
 src/java/au/edu/newcastle/seng2050/ajax/test.java
+/nbproject/private/
+/dist/

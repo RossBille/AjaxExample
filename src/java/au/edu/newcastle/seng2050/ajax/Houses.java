@@ -1,6 +1,7 @@
 package au.edu.newcastle.seng2050.ajax;
 
-import au.edu.newcastle.seng2050.ajax.example.objects.Animal;
+import au.edu.newcastle.seng2050.ajax.example.objects.House;
+import au.edu.newcastle.seng2050.ajax.example.objects.Person;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -12,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Ross
  */
-public class Animals extends HttpServlet
+public class Houses extends HttpServlet
 {
 		private static Repo repo = new Repo();
 		@Override
@@ -30,32 +31,18 @@ public class Animals extends HttpServlet
 				//set response to match
 				response.setContentType(contentType);
 
-				//check if user has queried for an exact object
-				String id = request.getParameter("id");
 				String result = "";
-				if (id == null)
-				{
-						result += "[";
-						for (int i = 0;i < Repo.animals.size() - 1; i++)
-						{
-								result += print(contentType, repo.animals.get(i));
-								result += ",";
-						}
-						result += print(contentType, repo.animals.get(repo.animals.size()-1));
-						result += "]";
-				}else{
-						result += print(contentType, repo.animals.get(Integer.parseInt(id)));
-				}
+				result += print(contentType, repo.h);
 				PrintWriter out = response.getWriter();
 				out.print(result);
 		}
-		private String print(String contentType, Animal a)
+		private String print(String contentType, House h)
 		{
 				if(contentType.equalsIgnoreCase("text/json"))
 				{
-						return a.toJson();
+						return h.toJson();
 				}else{
-						return a.toXml();
+						return h.toXml();
 				}
 		}
 }
