@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <servlet>
+        <servlet-name>Animals</servlet-name>
+        <servlet-class>au.edu.newcastle.seng2050.ajax.Animals</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>People</servlet-name>
+        <servlet-class>au.edu.newcastle.seng2050.ajax.People</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>House</servlet-name>
+        <servlet-class>au.edu.newcastle.seng2050.ajax.Houses</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Animals</servlet-name>
+        <url-pattern>/Animals</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>People</servlet-name>
+        <url-pattern>/People</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>House</servlet-name>
+        <url-pattern>/House</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
